@@ -48,7 +48,7 @@ jobs:
     # 7. EC2 서버에 SSH 접속 후 원격 배포 스크립트 실행
     - name: Deploy to EC2
       run: |
-        ssh -o StrictHostKeyChecking=no -i ec2_key.pem cheon0314@${{ secrets.EC2_HOST }} << 'EOF'
+        ssh -o StrictHostKeyChecking=no -i ec2_key.pem ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
           # (선택사항) DockerHub 로그인 명령. 비활성화 되어 있음
           # docker login -u cheon0314 -p ${{ secrets.DOCKERHUB_TOKEN }}
 
